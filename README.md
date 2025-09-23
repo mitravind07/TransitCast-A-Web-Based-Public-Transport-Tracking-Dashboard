@@ -1,31 +1,87 @@
-# TransitCast — Public Transport Tracker (Starter)
+🚍 TransitCast — Public Transport Tracker
+📖 Overview
 
-This repository started as **IndraCast** (a weather dashboard) and has been adapted into **TransitCast**, a lightweight static web app that demonstrates how to fetch and display public transit information (nearby stops, upcoming departures, basic planner placeholder) using the **Transitland** REST API.
+TransitCast is a lightweight web dashboard that helps users:
 
-## What this starter includes
-- Single-page app: `index.html`, `styles.css`, `script.js`
-- Config: `config.js` (set API endpoints and refresh interval)
-- Uses browser Geolocation to find nearby stops and Transitland to fetch stop & schedule data.
+Find nearby transit stops using geolocation.
 
-## How to run locally
-1. Serve the folder as a static site. Example using Python:
-   ```bash
-   # from inside the project folder
-   python3 -m http.server 8000
-   # then open http://localhost:8000 in your browser
-   ```
-2. Allow browser location access when prompted.
+View live arrivals at selected stops.
 
-## Notes about Transitland
-- Transitland aggregates GTFS and GTFS-Realtime feeds globally. Many endpoints do not require API keys for simple queries, but API limits may apply. If you have a rate-limited use case, consider signing up or using a specific agency's API.
-- The starter uses `/stops` and `/stop_schedules` endpoints. For production, you might prefer agency-specific GTFS-realtime decoding for vehicle positions and alerts.
+See stops, vehicles, and routes on an interactive Leaflet map.
 
-## Next steps (suggestions)
-- Integrate a map (Leaflet) and show stop markers & vehicle positions.
-- Upgrade route planner with OpenTripPlanner or Google Directions (transit mode).
-- Decode GTFS-Realtime protobufs for live vehicle positions and alerts.
-- Add robust error handling and unit tests for parsers.
+Use a route planner to get itineraries between two locations.
 
-## Credits
-Original project: IndraCast (weather dashboard) — adapted to TransitCast starter.
+Save favorite stops for quick access.
 
+Built with HTML, CSS, JavaScript, and APIs such as Transitland and OpenTripPlanner (OTP).
+
+⚡ Quick Start
+
+Download & Extract
+Unzip the project and open the folder.
+
+Run Locally
+
+Open index.html in your browser.
+
+Allow location access (to find nearby stops).
+
+Basic Demo
+
+You’ll see your location on the map.
+
+Nearby transit stops will appear as markers.
+
+Click on a stop → view upcoming arrivals.
+
+Use the Route Planner (bottom panel) to enter origin & destination.
+
+🔧 Configuration
+
+Edit config.js to set API endpoints:
+
+const CONFIG = {
+  TRANSITLAND_BASE_URL: "https://transit.land/api/v2/rest",
+  AUTO_REFRESH_SECONDS: 45,
+
+  // Optional advanced features:
+  TRANSITLAND_ROUTING_URL: "",  // Transitland routing API endpoint
+  OTP_URL: "",                  // OpenTripPlanner server URL (e.g. "http://localhost:8080/otp")
+  VEHICLE_POSITIONS_URL: ""     // JSON feed with vehicle positions [{lat, lon, id, route_label}]
+};
+
+Options:
+
+Transitland Base URL: Default is global dataset. Works without an API key for many cities.
+
+Routing:
+
+If you have Transitland v2 routing enabled → paste its URL in TRANSITLAND_ROUTING_URL.
+
+Or, if you run OpenTripPlanner → set OTP_URL.
+
+Vehicles: If you have a decoded GTFS-Realtime feed → point VEHICLE_POSITIONS_URL to it.
+
+🌍 Map
+
+Powered by Leaflet + OpenStreetMap.
+
+Stops and vehicles update automatically.
+
+Routes (if supported by API) are drawn as polylines.
+
+🚀 Deployment
+
+Push the folder to GitHub.
+
+Deploy free on Netlify or Vercel.
+
+Share the live link.
+
+📌 Notes
+
+Not all cities expose open transit APIs.
+
+If testing in India, you can simulate routes by entering text like New Delhi → Gurgaon.
+
+Some APIs require free sign-up for keys.
