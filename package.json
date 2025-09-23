@@ -1,0 +1,34 @@
+{
+  "name": "indracast-dashboard",
+  "version": "1.0.0",
+  "description": "A modern, accessible weather application with ensemble forecasting, hyperlocal observations, and government alerts",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "accessibility",
+    "responsive",
+    "glassmorphism",
+    "neumorphism",
+    "vanilla-js",
+    "ensemble-forecasting"
+  ],
+  "author": "IndraCast Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaibhaw1103/IndraCast.git"
+  },
+  "homepage": "https://vaibhaw1103.github.io/IndraCast",
+  "bugs": {
+    "url": "https://github.com/vaibhaw1103/IndraCast/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

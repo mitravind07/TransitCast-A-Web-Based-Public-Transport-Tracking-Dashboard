@@ -1,0 +1,46 @@
+/* TransitCast - simple responsive styles */
+:root{
+  --bg:#f6fbff;
+  --card:#ffffff;
+  --accent:#0b66ff;
+  --muted:#666;
+  --danger:#d9534f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#0b2545;
+}
+.app-header{
+  display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(90deg,var(--accent),#34a0ff);color:white;
+}
+.app-header h1{margin:0;font-size:1.15rem}
+.location-status{opacity:0.95;font-size:0.95rem}
+button{background:transparent;border:0;color:inherit;font-size:1.1rem;cursor:pointer}
+
+.grid{
+  display:grid;grid-template-columns:320px 1fr;gap:18px;padding:18px;
+}
+.sidebar{padding-top:6px}
+.card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(11,102,255,0.06)}
+.list{max-height:42vh;overflow:auto}
+.arrivals{list-style:none;padding:0;margin:8px 0}
+.arrivals li{padding:8px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}
+.route-chip{padding:6px 8px;border-radius:6px;background:#eef6ff;color:var(--accent);font-weight:600;margin-right:8px}
+.muted{color:var(--muted);font-size:0.95rem;margin-top:6px}
+.footer{padding:12px 18px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+.hidden{display:none}
+.alerts{border-left:4px solid var(--danger);color:var(--danger)}
+.stop-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.stop-info{display:flex;flex-direction:column}
+.stop-name{font-weight:700}
+.distance{font-size:0.85rem;color:var(--muted)}
+.star{cursor:pointer;padding:6px}
+@media (max-width:880px){
+  .grid{grid-template-columns:1fr; padding:12px}
+  .sidebar{order:2}
+}
+
+/* Map */
+.map{height:320px;border-radius:10px;margin:18px 18px 0 18px;overflow:hidden}
+.leaflet-container{height:100%;width:100%}

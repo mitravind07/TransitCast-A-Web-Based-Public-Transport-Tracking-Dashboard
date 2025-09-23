@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TransitCast — Public Transport Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
+</head>
+<body>
+  <header class="app-header">
+    <h1>TransitCast</h1>
+    <div id="locationStatus" class="location-status">Location: unknown</div>
+    <button id="refreshBtn" title="Refresh data">⟳</button>
+  </header>
+
+  <main class="grid">
+    <div id="map" class="map"></div>
+    <aside class="sidebar">
+      <section class="card">
+        <h2>Nearby Stops</h2>
+        <div id="stopsList" class="list">Allow location to see nearby stops.</div>
+      </section>
+
+      <section class="card">
+        <h2>Favorites</h2>
+        <div id="favoritesList" class="list">No favorites yet — star a stop.</div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div class="card">
+        <h2 id="selectedStopName">Select a stop</h2>
+        <div id="stopMeta" class="muted">Arrival times will appear here.</div>
+        <ul id="arrivals" class="arrivals"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Route Planner (basic)</h3>
+        <form id="plannerForm">
+          <input id="fromInput" placeholder="From address or stop" />
+          <input id="toInput" placeholder="To address or stop" />
+          <button type="submit">Plan</button>
+        </form>
+        <div id="itineraries" class="list">Route planner uses OpenTripPlanner / Google Directions if configured.</div>
+      </div>
+
+      <div id="alerts" class="card alerts hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built from IndraCast → TransitCast starter — demo using Transitland API (no key required for many endpoints). Map powered by Leaflet + OpenStreetMap.
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
+</body>
+</html>
