@@ -70,6 +70,13 @@ const CONFIG = {
 
 ---
 
+## 🚀 Deployment  
+1. Push to **GitHub**.  
+2. Deploy free on **Netlify** or **Vercel**.  
+3. Share the live link.  
+
+---
+
 ## 📌 Notes  
 - Works best in cities with **open transit data**.  
 - For demos, try searching routes like `New Delhi → Gurgaon`.  
