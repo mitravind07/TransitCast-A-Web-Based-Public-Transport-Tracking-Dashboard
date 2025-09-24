@@ -1,45 +1,51 @@
-🚍 TransitCast — Public Transport Tracker
-📖 Overview
+# 🚍 TransitCast: A Web-Based Public Transport Tracking Dashboard  
 
-TransitCast is a lightweight web dashboard that helps users:
+## 📖 Overview  
+TransitCast is a lightweight, browser-based dashboard that helps users track **public transport in real time**.  
+It combines **geolocation, live API data, and interactive maps** to provide:  
+- Nearby transit stops  
+- Live bus/train arrivals  
+- Route planning  
+- Map visualization of stops, vehicles, and itineraries  
+- Favorites for quick access  
 
-Find nearby transit stops using geolocation.
+Built with **HTML, CSS, and JavaScript**, powered by **Leaflet + OpenStreetMap** and APIs such as **Transitland** or **OpenTripPlanner**.  
 
-View live arrivals at selected stops.
+---
 
-See stops, vehicles, and routes on an interactive Leaflet map.
+## ✨ Features  
+- 🌍 **Interactive Map** — Explore stops, vehicles, and planned routes.  
+- 📍 **Nearby Stops** — Auto-detects user location and lists closest stops.  
+- ⏱️ **Live Arrivals** — Displays upcoming arrivals at a selected stop.  
+- 🛣️ **Route Planner** — Suggests itineraries between two points.  
+- ⭐ **Favorites** — Save frequently used stops locally for quick access.  
+- 🔄 **Auto Refresh** — Data updates at regular intervals.  
 
-Use a route planner to get itineraries between two locations.
+---
 
-Save favorite stops for quick access.
+## ⚡ Quick Start  
 
-Built with HTML, CSS, JavaScript, and APIs such as Transitland and OpenTripPlanner (OTP).
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/yourusername/transitcast.git
+   cd transitcast
+   ```
 
-⚡ Quick Start
+2. **Run Locally**  
+   - Open `index.html` in your browser.  
+   - Allow **location access** to get nearby stops.  
 
-Download & Extract
-Unzip the project and open the folder.
+3. **Demo**  
+   - Click markers on the map to view stop details.  
+   - Use the **Route Planner** form to enter origin & destination.  
 
-Run Locally
+---
 
-Open index.html in your browser.
+## 🔧 Configuration  
 
-Allow location access (to find nearby stops).
+Edit `config.js` to set API endpoints:  
 
-Basic Demo
-
-You’ll see your location on the map.
-
-Nearby transit stops will appear as markers.
-
-Click on a stop → view upcoming arrivals.
-
-Use the Route Planner (bottom panel) to enter origin & destination.
-
-🔧 Configuration
-
-Edit config.js to set API endpoints:
-
+```js
 const CONFIG = {
   TRANSITLAND_BASE_URL: "https://transit.land/api/v2/rest",
   AUTO_REFRESH_SECONDS: 45,
@@ -49,39 +55,51 @@ const CONFIG = {
   OTP_URL: "",                  // OpenTripPlanner server URL (e.g. "http://localhost:8080/otp")
   VEHICLE_POSITIONS_URL: ""     // JSON feed with vehicle positions [{lat, lon, id, route_label}]
 };
+```  
 
-Options:
+- **Transitland** → Provides global stop/arrival data (no key required for many endpoints).  
+- **Routing** → Use either Transitland Routing API or OpenTripPlanner.  
+- **Vehicle Positions** → Optional JSON feed with live vehicle data.  
 
-Transitland Base URL: Default is global dataset. Works without an API key for many cities.
+---
 
-Routing:
+## 🌍 Map  
+- Interactive map powered by **Leaflet + OpenStreetMap**.  
+- Stop markers include names, distance, and arrival info.  
+- Routes are drawn as polylines (if supported by API).  
 
-If you have Transitland v2 routing enabled → paste its URL in TRANSITLAND_ROUTING_URL.
+---
 
-Or, if you run OpenTripPlanner → set OTP_URL.
+## 🚀 Deployment  
+1. Push to **GitHub**.  
+2. Deploy free on **Netlify** or **Vercel**.  
+3. Share the live link.  
 
-Vehicles: If you have a decoded GTFS-Realtime feed → point VEHICLE_POSITIONS_URL to it.
+---
 
-🌍 Map
+## 📌 Notes  
+- Works best in cities with **open transit data**.  
+- For demos, try searching routes like `New Delhi → Gurgaon`.  
+- Some APIs may require sign-up for free API keys.  
 
-Powered by Leaflet + OpenStreetMap.
+---
 
-Stops and vehicles update automatically.
+## 📜 License  
+This project is licensed under the MIT License.  
 
-Routes (if supported by API) are drawn as polylines.
+---
 
-🚀 Deployment
+## 🔖 GitHub Topics  
+Add these tags to your repo for better discoverability:  
 
-Push the folder to GitHub.
-
-Deploy free on Netlify or Vercel.
-
-Share the live link.
-
-📌 Notes
-
-Not all cities expose open transit APIs.
-
-If testing in India, you can simulate routes by entering text like New Delhi → Gurgaon.
-
-Some APIs require free sign-up for keys.
+```
+public-transport
+javascript
+leaflet
+transit
+transitland
+opentripplanner
+geolocation
+realtime-data
+web-dashboard
+```
